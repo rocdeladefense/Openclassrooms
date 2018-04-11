@@ -3,6 +3,15 @@ import java.util.Scanner;
 public class sz1 {
 	
 	public static void main(String[] args) {
+		
+		Distributeur distributeur = new Distributeur();
+		distributeur.init(5, 0);
+		
+		
+		
+		
+		
+		
 		Chocolat ch = new Chocolat();
 		Café ca = new Café();
 		int stockcaf2 = 3;
@@ -13,7 +22,7 @@ public class sz1 {
 		int du;
 		int tmp;
 		int cam = 0;
-		while (stockchoco2 != 0 && stockcaf2 != 0)
+		while (stockchoco2 != 0 && distributeur.getBoissonsCafe().size() > 0)
 		{
 			Scanner scb = new Scanner(System.in);
 			System.out.println("Tapez 1 pour un chocolat \nTapez 2 pour un café");
@@ -75,9 +84,11 @@ public class sz1 {
 				System.out.println("Insérez " + prixcaf + " centimes SVP");
 				Scanner scv = new Scanner(System.in);
 				int monnaie = scv.nextInt();
+				
 				if (monnaie == prixcaf)
 				{
 					System.out.println("Merci beaucoup, " + ca.doncafe());
+					distributeur.donneCafe();
 					stockcaf2--;
 					cam = cam + prixcaf;
 				}
@@ -85,6 +96,7 @@ public class sz1 {
 				{
 					rendu = monnaie - prixcaf;
 					System.out.println("Merci, nous vous rendons " + rendu + " centimes, " + ca.doncafe());
+					distributeur.donneCafe();
 					stockcaf2--;
 					cam = cam + prixcaf;
 				}
