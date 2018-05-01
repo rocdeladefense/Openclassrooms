@@ -3,21 +3,31 @@ import java.util.Scanner;
 public class sz1 {
 	
 	public static void main(String[] args) {
-		
+		int nbcafe = 3;
+		int nbchocolat = 3;
+		int prixCafe =1;
+		int prixChocolat=3;
+
 		Distributeur distributeur = new Distributeur();
-		distributeur.init(5, 0);
+		distributeur.init(nbcafe, nbchocolat,prixCafe,prixChocolat);
+		int iRep = distributeur.poseQuestionChoixBoisson();
+		distributeur.getDemandeMonnaie(iRep);
 		
 		
 		
 		
+	}
+}
 		
 		
-		Chocolat ch = new Chocolat();
+		
+		
+	/*	Chocolat ch = new Chocolat();
 		Café ca = new Café();
-		int stockcaf2 = 3;
-		int stockchoco2 = 3;
-		int prixchoco = 20;
-		int prixcaf = 20;
+		//int stockcaf2 = 3;
+		//int stockchoco2 = 3;
+		//int prixchoco = 20;
+		//int prixcaf = 20;
 		int rendu;
 		int du;
 		int tmp;
@@ -89,7 +99,7 @@ public class sz1 {
 				{
 					System.out.println("Merci beaucoup, " + ca.doncafe());
 					distributeur.donneCafe();
-					stockcaf2--;
+					//stockcaf2--;
 					cam = cam + prixcaf;
 				}
 				else if (monnaie > prixcaf) 
@@ -267,3 +277,4 @@ public class sz1 {
 	
 	}
 	}
+*/
